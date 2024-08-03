@@ -1,0 +1,32 @@
+{
+  "name": "electron-react-powershell",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "concurrently \"npm run react-start\" \"npm run electron-start\"",
+    "react-start": "webpack serve --config webpack.config.js",
+    "electron-start": "wait-on http://localhost:3000 && electron .",
+    "build": "webpack --config webpack.config.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.2",
+    "@babel/preset-react": "^7.13.13",
+    "babel-loader": "^8.2.2",
+    "concurrently": "^6.2.0",
+    "css-loader": "^5.2.6",
+    "electron": "^13.0.1",
+    "electron-builder": "^22.11.7",
+    "html-webpack-plugin": "^5.3.1",
+    "style-loader": "^2.0.0",
+    "wait-on": "^5.3.0",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "electron-is-dev": "^2.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
